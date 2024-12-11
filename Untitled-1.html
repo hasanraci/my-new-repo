@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoGame</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Yerel CSS Dosyası -->
+    <link rel="stylesheet" href="Untitled-2.css">
+</head>
+<body>
+    <header>
+        <h1>GeoGame: Interactive Geography Quiz</h1>
+    </header>
+    <main>
+        <div id="game-ui">
+            <button id="start-btn">Start Game</button>
+            <div id="game-info">
+                <p>Score: <span id="score">0</span></p>
+                <p>Lives: <span id="lives">3</span></p>
+                <p>Time: <span id="timer">60</span></p>
+            </div>
+            <p id="question">Click 'Start Game' to begin!</p>
+            <input id="answer" type="text" placeholder="Type your answer here">
+            <button id="submit-btn">Submit Answer</button>
+        </div>
+        <div id="map"></div>
+    </main>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Yerel JS Dosyası -->
+    <script src="Untitled-1.js"></script>
+    <script>
+        // Harita oluşturuluyor
+        const map = L.map('map').setView([39.9334, 32.8597], 6); // Örnek olarak Türkiye'nin merkezi
+
+        // Stamen Toner katmanını ekleme (şehir isimleri ve etiketler olmadan)
+        L.tileLayer('https://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://maps.stamen.com/">Stamen Design</a>',
+            maxZoom: 18, // En yüksek yakınlaştırma seviyesi
+            minZoom: 3 // En düşük uzaklaştırma seviyesi
+        }).addTo(map);
+    </script>
+</body>
+</html>
+
+
+
+
+
+  
+
